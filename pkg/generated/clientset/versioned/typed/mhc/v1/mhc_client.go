@@ -27,12 +27,17 @@ import (
 
 type MhcV1Interface interface {
 	RESTClient() rest.Interface
+	FoosGetter
 	NetworksGetter
 }
 
 // MhcV1Client is used to interact with features provided by the mhc.k8s.io group.
 type MhcV1Client struct {
 	restClient rest.Interface
+}
+
+func (c *MhcV1Client) Foos(namespace string) FooInterface {
+	return newFoos(c, namespace)
 }
 
 func (c *MhcV1Client) Networks(namespace string) NetworkInterface {

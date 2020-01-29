@@ -29,6 +29,10 @@ type FakeMhcV1 struct {
 	*testing.Fake
 }
 
+func (c *FakeMhcV1) Foos(namespace string) v1.FooInterface {
+	return &FakeFoos{c, namespace}
+}
+
 func (c *FakeMhcV1) Networks(namespace string) v1.NetworkInterface {
 	return &FakeNetworks{c, namespace}
 }

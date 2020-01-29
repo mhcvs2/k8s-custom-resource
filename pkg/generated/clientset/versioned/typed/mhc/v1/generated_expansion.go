@@ -18,4 +18,6 @@ limitations under the License.
 
 package v1
 
+type FooExpansion interface{}
+
 type NetworkExpansion interface{}

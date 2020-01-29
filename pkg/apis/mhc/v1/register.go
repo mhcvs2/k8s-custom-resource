@@ -39,6 +39,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		SchemeGroupVersion,
 		&Network{},
 		&NetworkList{},
+		&Foo{},
+		&FooList{},
 	)
 
 	// register the type in the scheme
