@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	mhcv1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
+	mhcv1 "github.com/mhcvs2/k8s-custom-resource/pkg/apis/mhc/v1"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"

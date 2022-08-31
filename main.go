@@ -3,17 +3,17 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/mhcvs2/k8s-custom-resource/pkg"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/klog"
-	"krds/k8s-custom-resource/pkg"
 	"time"
 	// Uncomment the following line to load the gcp plugin (only required to authenticate against GKE clusters).
 	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 
-	clientset "krds/k8s-custom-resource/pkg/generated/clientset/versioned"
-	informers "krds/k8s-custom-resource/pkg/generated/informers/externalversions"
-	"krds/k8s-custom-resource/pkg/signals"
+	clientset "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned"
+	informers "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions"
+	"github.com/mhcvs2/k8s-custom-resource/pkg/signals"
 )
 
 var (

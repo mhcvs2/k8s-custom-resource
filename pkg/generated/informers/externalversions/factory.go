@@ -19,9 +19,9 @@ limitations under the License.
 package externalversions
 
 import (
-	versioned "krds/k8s-custom-resource/pkg/generated/clientset/versioned"
-	internalinterfaces "krds/k8s-custom-resource/pkg/generated/informers/externalversions/internalinterfaces"
-	mhc "krds/k8s-custom-resource/pkg/generated/informers/externalversions/mhc"
+	versioned "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions/internalinterfaces"
+	mhc "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions/mhc"
 	reflect "reflect"
 	sync "sync"
 	time "time"

@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	v1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
+	v1 "github.com/mhcvs2/k8s-custom-resource/pkg/apis/mhc/v1"
 
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"

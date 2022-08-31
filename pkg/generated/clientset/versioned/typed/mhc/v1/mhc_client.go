@@ -19,8 +19,8 @@ limitations under the License.
 package v1
 
 import (
-	v1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
-	"krds/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
+	v1 "github.com/mhcvs2/k8s-custom-resource/pkg/apis/mhc/v1"
+	"github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
 
 	rest "k8s.io/client-go/rest"
 )

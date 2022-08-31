@@ -19,8 +19,8 @@ limitations under the License.
 package mhc
 
 import (
-	internalinterfaces "krds/k8s-custom-resource/pkg/generated/informers/externalversions/internalinterfaces"
-	v1 "krds/k8s-custom-resource/pkg/generated/informers/externalversions/mhc/v1"
+	internalinterfaces "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions/internalinterfaces"
+	v1 "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions/mhc/v1"
 )
 
 // Interface provides access to each of this group's versions.

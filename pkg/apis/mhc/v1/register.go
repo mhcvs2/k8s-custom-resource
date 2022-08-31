@@ -1,8 +1,7 @@
 package v1
 
-
 import (
-	"krds/k8s-custom-resource/pkg/apis/mhc"
+	"github.com/mhcvs2/k8s-custom-resource/pkg/apis/mhc"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"

@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "krds/k8s-custom-resource/pkg/generated/clientset/versioned"
-	mhcv1 "krds/k8s-custom-resource/pkg/generated/clientset/versioned/typed/mhc/v1"
-	fakemhcv1 "krds/k8s-custom-resource/pkg/generated/clientset/versioned/typed/mhc/v1/fake"
+	clientset "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned"
+	mhcv1 "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned/typed/mhc/v1"
+	fakemhcv1 "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned/typed/mhc/v1/fake"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"

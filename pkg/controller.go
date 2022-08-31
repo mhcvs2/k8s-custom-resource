@@ -16,11 +16,11 @@ import (
 	"k8s.io/klog"
 	"time"
 
-	mhcv1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
-	clientset "krds/k8s-custom-resource/pkg/generated/clientset/versioned"
-	networkscheme "krds/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
-	informers "krds/k8s-custom-resource/pkg/generated/informers/externalversions/mhc/v1"
-	listers "krds/k8s-custom-resource/pkg/generated/listers/mhc/v1"
+	mhcv1 "github.com/mhcvs2/k8s-custom-resource/pkg/apis/mhc/v1"
+	clientset "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned"
+	networkscheme "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
+	informers "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions/mhc/v1"
+	listers "github.com/mhcvs2/k8s-custom-resource/pkg/generated/listers/mhc/v1"
 )
 
 const controllerAgentName = "network-controller"
@@ -267,4 +267,3 @@ func (c *Controller) enqueueNetworkForDelete(obj interface{}) {
 	}
 	c.workqueue.AddRateLimited(key)
 }
-

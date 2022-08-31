@@ -19,10 +19,10 @@ limitations under the License.
 package v1
 
 import (
-	mhcv1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
-	versioned "krds/k8s-custom-resource/pkg/generated/clientset/versioned"
-	internalinterfaces "krds/k8s-custom-resource/pkg/generated/informers/externalversions/internalinterfaces"
-	v1 "krds/k8s-custom-resource/pkg/generated/listers/mhc/v1"
+	mhcv1 "github.com/mhcvs2/k8s-custom-resource/pkg/apis/mhc/v1"
+	versioned "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/mhcvs2/k8s-custom-resource/pkg/generated/informers/externalversions/internalinterfaces"
+	v1 "github.com/mhcvs2/k8s-custom-resource/pkg/generated/listers/mhc/v1"
 	time "time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

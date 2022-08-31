@@ -20,7 +20,7 @@ package versioned
 
 import (
 	"fmt"
-	mhcv1 "krds/k8s-custom-resource/pkg/generated/clientset/versioned/typed/mhc/v1"
+	mhcv1 "github.com/mhcvs2/k8s-custom-resource/pkg/generated/clientset/versioned/typed/mhc/v1"
 
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
