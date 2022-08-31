@@ -1,4 +1,4 @@
-module krds.com/k8s-custom-resource
+module github.com/mhcvs2/k8s-custom-resource
 
 go 1.13
 
