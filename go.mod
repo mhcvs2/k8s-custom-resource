@@ -1,4 +1,4 @@
-module krds/k8s-custom-resource
+module krds.com/k8s-custom-resource
 
 go 1.13
 
