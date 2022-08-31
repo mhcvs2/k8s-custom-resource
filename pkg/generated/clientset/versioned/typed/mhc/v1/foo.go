@@ -19,6 +19,7 @@ limitations under the License.
 package v1
 
 import (
+	"context"
 	v1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
 	scheme "krds/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
 	"time"
@@ -71,7 +72,7 @@ func (c *foos) Get(name string, options metav1.GetOptions) (result *v1.Foo, err 
 		Resource("foos").
 		Name(name).
 		VersionedParams(&options, scheme.ParameterCodec).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -88,7 +89,7 @@ func (c *foos) List(opts metav1.ListOptions) (result *v1.FooList, err error) {
 		Resource("foos").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -105,7 +106,7 @@ func (c *foos) Watch(opts metav1.ListOptions) (watch.Interface, error) {
 		Resource("foos").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Watch()
+		Watch(context.Background())
 }
 
 // Create takes the representation of a foo and creates it.  Returns the server's representation of the foo, and an error, if there is any.
@@ -115,7 +116,7 @@ func (c *foos) Create(foo *v1.Foo) (result *v1.Foo, err error) {
 		Namespace(c.ns).
 		Resource("foos").
 		Body(foo).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -128,7 +129,7 @@ func (c *foos) Update(foo *v1.Foo) (result *v1.Foo, err error) {
 		Resource("foos").
 		Name(foo.Name).
 		Body(foo).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -144,7 +145,7 @@ func (c *foos) UpdateStatus(foo *v1.Foo) (result *v1.Foo, err error) {
 		Name(foo.Name).
 		SubResource("status").
 		Body(foo).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -156,7 +157,7 @@ func (c *foos) Delete(name string, options *metav1.DeleteOptions) error {
 		Resource("foos").
 		Name(name).
 		Body(options).
-		Do().
+		Do(context.Background()).
 		Error()
 }
 
@@ -172,7 +173,7 @@ func (c *foos) DeleteCollection(options *metav1.DeleteOptions, listOptions metav
 		VersionedParams(&listOptions, scheme.ParameterCodec).
 		Timeout(timeout).
 		Body(options).
-		Do().
+		Do(context.Background()).
 		Error()
 }
 
@@ -185,7 +186,7 @@ func (c *foos) Patch(name string, pt types.PatchType, data []byte, subresources 
 		SubResource(subresources...).
 		Name(name).
 		Body(data).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }

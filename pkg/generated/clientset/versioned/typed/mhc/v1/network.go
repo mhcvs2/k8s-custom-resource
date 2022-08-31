@@ -19,6 +19,7 @@ limitations under the License.
 package v1
 
 import (
+	"context"
 	v1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
 	scheme "krds/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
 	"time"
@@ -70,7 +71,7 @@ func (c *networks) Get(name string, options metav1.GetOptions) (result *v1.Netwo
 		Resource("networks").
 		Name(name).
 		VersionedParams(&options, scheme.ParameterCodec).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -87,7 +88,7 @@ func (c *networks) List(opts metav1.ListOptions) (result *v1.NetworkList, err er
 		Resource("networks").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -104,7 +105,7 @@ func (c *networks) Watch(opts metav1.ListOptions) (watch.Interface, error) {
 		Resource("networks").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Watch()
+		Watch(context.Background())
 }
 
 // Create takes the representation of a network and creates it.  Returns the server's representation of the network, and an error, if there is any.
@@ -114,7 +115,7 @@ func (c *networks) Create(network *v1.Network) (result *v1.Network, err error) {
 		Namespace(c.ns).
 		Resource("networks").
 		Body(network).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -127,7 +128,7 @@ func (c *networks) Update(network *v1.Network) (result *v1.Network, err error) {
 		Resource("networks").
 		Name(network.Name).
 		Body(network).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
@@ -139,7 +140,7 @@ func (c *networks) Delete(name string, options *metav1.DeleteOptions) error {
 		Resource("networks").
 		Name(name).
 		Body(options).
-		Do().
+		Do(context.Background()).
 		Error()
 }
 
@@ -155,7 +156,7 @@ func (c *networks) DeleteCollection(options *metav1.DeleteOptions, listOptions m
 		VersionedParams(&listOptions, scheme.ParameterCodec).
 		Timeout(timeout).
 		Body(options).
-		Do().
+		Do(context.Background()).
 		Error()
 }
 
@@ -168,7 +169,7 @@ func (c *networks) Patch(name string, pt types.PatchType, data []byte, subresour
 		SubResource(subresources...).
 		Name(name).
 		Body(data).
-		Do().
+		Do(context.Background()).
 		Into(result)
 	return
 }
