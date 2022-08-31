@@ -20,8 +20,8 @@ package v1
 
 import (
 	"context"
-	v1 "krds/k8s-custom-resource/pkg/apis/mhc/v1"
-	scheme "krds/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
+	v1 "krds.com/k8s-custom-resource/pkg/apis/mhc/v1"
+	scheme "krds.com/k8s-custom-resource/pkg/generated/clientset/versioned/scheme"
 	"time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
